@@ -1,7 +1,7 @@
 package org.example.repository.owners.dao;
 
 import org.example.commons.CsvFileReader;
-import org.example.repository.owners.entity.OwnersEntity;
+import org.example.repository.owners.entity.OwnerEntity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,13 +12,13 @@ public class OwnersDAOImpl implements OwnersDAO{
 
 
     @Override
-    public List<OwnersEntity> findAll() {
-        List<OwnersEntity> owners = new ArrayList<>();
+    public List<OwnerEntity> findAll() {
+        List<OwnerEntity> owners = new ArrayList<>();
         try {
             CsvFileReader.getRecords(FILE, SEPARATOR)
                     .forEach(csvRecord -> {
 
-                      OwnersEntity owner = OwnersEntity.builder()
+                      OwnerEntity owner = OwnerEntity.builder()
                               .dni(csvRecord.get("DNI"))
                               .name(csvRecord.get("NAME"))
                               .mainPokemonCode(csvRecord.get("MAIN_POKEMON_CODE"))
@@ -33,9 +33,9 @@ public class OwnersDAOImpl implements OwnersDAO{
     }
 
     @Override
-    public OwnersEntity findByDni(String dni) {
-        List<OwnersEntity> allPokemon = this.findAll();
-        for (OwnersEntity pokemon: allPokemon) {
+    public OwnerEntity findByDni(String dni) {
+        List<OwnerEntity> allPokemon = this.findAll();
+        for (OwnerEntity pokemon: allPokemon) {
             if (pokemon.getDni().equals(dni)) {
                 return pokemon;
             }

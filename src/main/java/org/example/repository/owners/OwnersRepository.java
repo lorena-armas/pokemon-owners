@@ -2,7 +2,7 @@ package org.example.repository.owners;
 
 import org.example.repository.owners.dao.OwnersDAO;
 import org.example.repository.owners.dao.OwnersDAOImpl;
-import org.example.repository.owners.entity.OwnersEntity;
+import org.example.repository.owners.entity.OwnerEntity;
 import java.util.List;
 
 public class OwnersRepository {
@@ -13,11 +13,11 @@ public class OwnersRepository {
         this.ownersDAO = new OwnersDAOImpl();
     }
 
-    public List<OwnersEntity> findAll() {
+    public List<OwnerEntity> findAll() {
         return ownersDAO.findAll();
     }
 
-    public OwnersEntity findByDni(String dni) {
+    public OwnerEntity findByDni(String dni) {
         return ownersDAO.findByDni(dni);
     }
 }

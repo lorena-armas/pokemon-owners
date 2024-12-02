@@ -18,7 +18,7 @@ public class PokemonDAOImpl implements PokemonDAO {
     }
 
     @Override
-    public PokemonResponseWrapper findPokemon(String pokemonCode) {
+    public PokemonResponseWrapper findByCode(String pokemonCode) {
         Socket socket = null;
         PrintWriter outputWriter = null;
         BufferedReader inputReader = null;

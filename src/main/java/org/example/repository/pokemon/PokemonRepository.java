@@ -12,7 +12,7 @@ public class PokemonRepository {
         this.pokemonDAO = new PokemonDAOImpl();
     }
 
-    public PokemonResponseWrapper findPokemon(String pokemonCode) {
-        return pokemonDAO.findPokemon(pokemonCode);
+    public PokemonResponseWrapper findByCode(String pokemonCode) {
+        return pokemonDAO.findByCode(pokemonCode);
     }
 }

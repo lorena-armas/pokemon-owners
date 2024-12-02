@@ -1,23 +1,23 @@
 package org.example.router;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.dto.OwnersDTO;
-import org.example.service.PokemonOwnersService;
-import org.example.service.PokemonOwnersServiceImpl;
+import org.example.dto.OwnerDTO;
+import org.example.service.PokemonOwnerService;
+import org.example.service.PokemonOwnerServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class PokemonOwnersHandler {
+public class PokemonOwnerHandler {
 
     private final static ObjectMapper objectMapper = new ObjectMapper();
-    private final PokemonOwnersService pokemonOwnersService;
+    private final PokemonOwnerService pokemonOwnersService;
 
-    public PokemonOwnersHandler() {
-        this.pokemonOwnersService = new PokemonOwnersServiceImpl();
+    public PokemonOwnerHandler() {
+        this.pokemonOwnersService = new PokemonOwnerServiceImpl();
     }
 
     public void findByDni(String dni, PrintWriter output) throws IOException {
-        OwnersDTO pokemonOwner = pokemonOwnersService.findByDni(dni);
+        OwnerDTO pokemonOwner = pokemonOwnersService.findByDni(dni);
         String pokemonOwnerJson = objectMapper.writeValueAsString(pokemonOwner);
 
         output.println(pokemonOwnerJson);

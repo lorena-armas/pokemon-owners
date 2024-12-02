@@ -17,5 +17,4 @@ public class PokemonDTO implements Serializable {
 
     private String type;
     private String name;
-    private int code;
 }
