@@ -1,7 +1,14 @@
 package org.example;
 
+import org.example.repository.pokemon.PokemonRepository;
+import org.example.router.ConnectionServer;
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+    public static void main(String[] args) throws IOException {
+        ConnectionServer server = new ConnectionServer();
+        server.start();
+
+
     }
 }
