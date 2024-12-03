@@ -31,7 +31,7 @@ public class PokemonDAOImpl implements PokemonDAO {
             outputWriter = new PrintWriter(socket.getOutputStream(),true);
             inputReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-            outputWriter.println("pokemon/" + pokemonCode);
+            outputWriter.println("pokemones/" + pokemonCode);
 
             String pokemonJson = inputReader.readLine();
             return objectMapper.readValue(pokemonJson, PokemonResponseWrapper.class);

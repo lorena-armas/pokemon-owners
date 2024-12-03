@@ -16,6 +16,7 @@ public class OwnersEntity implements Serializable {
 
 
     private String dni;
+    private int code;
     private String name;
     private String mainPokemonCode;
 }

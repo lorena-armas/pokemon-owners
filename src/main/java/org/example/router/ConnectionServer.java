@@ -1,6 +1,5 @@
 package org.example.router;
 
-import lombok.extern.slf4j.Slf4j;
 import org.example.commons.PropertiesReader;
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -22,7 +21,7 @@ public class ConnectionServer {
         Socket currentSocket;
         while (true) {
             currentSocket = serverSocket.accept();
-            new PokemonOwnersRouterTCP(currentSocket).start();
+            new PokemonOwnerRouterTCP(currentSocket).start();
 //            log.info("A new connection was detected");
         }
     }

@@ -5,7 +5,7 @@ import org.example.dto.OwnersDTO;
 import org.example.repository.owners.entity.OwnersEntity;
 import org.example.repository.pokemon.wrapper.PokemonResponseWrapper;
 
-public class PokemonOwnersMapper {
+public class PokemonOwnerMapper {
 
     public OwnersDTO toDTO(OwnersEntity owner, PokemonResponseWrapper pokemon) {
         return OwnersDTO.builder()
@@ -13,7 +13,6 @@ public class PokemonOwnersMapper {
                 .dni(owner.getDni())
                 .pokemon(PokemonDTO.builder()
                         .name(pokemon.getName())
-                        .code(pokemon.getCode())
                         .type(pokemon.getType())
                     .build())
                 .build();

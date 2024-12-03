@@ -1,7 +1,7 @@
 package org.example.repository.owners;
 
+import org.example.repository.owners.dao.OwnerMySQLDAOImpl;
 import org.example.repository.owners.dao.OwnersDAO;
-import org.example.repository.owners.dao.OwnersDAOImpl;
 import org.example.repository.owners.entity.OwnersEntity;
 import java.util.List;
 
@@ -10,7 +10,7 @@ public class OwnersRepository {
     private final OwnersDAO ownersDAO;
 
     public OwnersRepository() {
-        this.ownersDAO = new OwnersDAOImpl();
+        this.ownersDAO = new OwnerMySQLDAOImpl();
     }
 
     public List<OwnersEntity> findAll() {

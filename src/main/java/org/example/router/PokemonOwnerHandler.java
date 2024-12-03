@@ -7,12 +7,12 @@ import org.example.service.PokemonOwnersServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class PokemonOwnersHandler {
+public class PokemonOwnerHandler {
 
     private final static ObjectMapper objectMapper = new ObjectMapper();
     private final PokemonOwnersService pokemonOwnersService;
 
-    public PokemonOwnersHandler() {
+    public PokemonOwnerHandler() {
         this.pokemonOwnersService = new PokemonOwnersServiceImpl();
     }
 

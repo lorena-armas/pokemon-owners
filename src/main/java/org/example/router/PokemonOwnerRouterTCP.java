@@ -5,13 +5,13 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class PokemonOwnersRouterTCP extends Thread {
+public class PokemonOwnerRouterTCP extends Thread {
 
-    private final PokemonOwnersHandler pokemonOwnersHandler;
+    private final PokemonOwnerHandler pokemonOwnerHandler;
     private final Socket socket;
 
-    public PokemonOwnersRouterTCP(Socket socket) {
-        this.pokemonOwnersHandler = new PokemonOwnersHandler();
+    public PokemonOwnerRouterTCP(Socket socket) {
+        this.pokemonOwnerHandler = new PokemonOwnerHandler();
         this.socket = socket;
     }
 
@@ -22,13 +22,13 @@ public class PokemonOwnersRouterTCP extends Thread {
         ) {
             String operation = inputReader.readLine();
 
-            if(operation.matches("^pokemon-owner/\\d{8}$")) {
+            if(operation.matches("^pokemon-owners/\\d{8}$")) {
                 String pokemonCode = operation.split("/")[1].trim();
-                pokemonOwnersHandler.findByDni(pokemonCode, outputWriter);
+                pokemonOwnerHandler.findByDni(pokemonCode, outputWriter);
             }
 
         } catch (Exception exception) {
-            throw new IllegalArgumentException("Operation not found: " + exception.getMessage());
+            throw new IllegalArgumentException("error message : " + exception.getMessage());
 
         } finally {
             try {
